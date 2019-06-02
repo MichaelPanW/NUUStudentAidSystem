@@ -1,0 +1,113 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<!--<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/lang/zh_TW.js"></script>
+<script>
+        var editor;
+        KindEditor.ready(function(K) {
+                editor = K.create('#descriptions', {
+					    afterBlur: function(){this.sync();},
+                        langType : 'zh_TW',
+						items:[
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'quickformat', 'selectall', '|', 'fullscreen', '/', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'about'],
+						width:'100%',
+						height:'350px',
+						resizeType:0
+                });
+        });
+</script>-->
+
+
+<!-----主內容------>
+  <div class="container">
+  <div class="tabTitle">帳號管理 > <span class="conTitle">{$vo.programe_name}</span></div>                           
+    <div class="Main">
+      <!-- 按鈕 start -->
+      <div class="buttonA">
+        <!--<li class="btnB"><a name="add" onclick="javascript:document.location='__URL__/insert/id/{$parent.id}';" >新增</a></li>-->
+        
+        <div class="selectLable">
+        </div>
+      </div>
+      <!-- 按鈕 end -->
+      
+      <form method="post" action="{:U('Config/doModify')}" enctype="multipart/form-data" id="mainFrom">
+      <div class="tabB">
+           <table border="0" cellpadding="0" cellspacing="0" >
+             <tr>
+                  <td align="right">系統名稱</td>
+                  <td colspan="2"><input name="company_name" id="company_name" size="90" value="{$vo.company_name}"></td>
+             </tr>
+             <tr>
+                  <td align="right">前台名稱</td>
+                  <td colspan="2"><input name="contactname" id="contactname" size="90" value="{$vo.contactname}"></td>
+             </tr>
+             <tr>
+                  <td align="right">檔案索引連結</td>
+                  <td colspan="2"><input name="header_content" id="header_content" size="90" value="{$vo.header_content}"></td>
+             </tr>
+             <tr>
+                  <td align="right">瀏覽量</td>
+                  <td colspan="2"><input name="recommendnum" id="recommendnum" size="90" value="{$vo.recommendnum}"></td>
+             </tr>
+
+             <tr>系統有問題請聯絡:m28126584@gmail.com</tr>
+             <tr><td colspan="3"><hr /></td></tr>
+             <!--<tr>
+                  <td align="right">頁面LOGO</td>
+                  <td><if condition="$vo.company_logo neq ''"><img src="../../../Uploads/{$vo.company_logo}" border="0" /><else />無圖片</if></td>
+                  <td><input name="company_logoimg" id="company_logoimg" type="file" /><input name="" onclick="javascript:document.location='__URL__/clearFile/id/a/';" type="button" value="清除" /></td>
+             </tr>
+             <tr><td colspan="3"><hr /></td></tr>-->
+             <!--<tr>
+                  <td colspan="2">
+                       <input type="hidden" name="description" id="descriptions" value="">
+                  </td>
+             </tr>
+             <tr><td colspan="2"><hr /></td></tr>-->
+			 <!--
+             <tr>
+                  <td align="right">後台LOGO</td>
+                  <td><if condition="$vo.company_pic neq ''"><img style="width:300px;height:auto;" src="/{$vo.company_pic}" border="0" /><else />無圖片</if></td>
+                  <td><input name="company_picimg" type="file" id="company_picimg" /><input onclick="javascript:document.location='__URL__/clearFile/id/b/';" type="button" value="清除" /></td>
+             </tr>-->
+             <!--<tr><td colspan="3"><hr /></td></tr>
+             <tr>
+                  <td align="right">網站人次</td>
+                  <td>{$totalCome}</td>
+             </tr>-->
+             <tr>
+                  <td colspan="3">
+                       <font color="#FF0000"> *請根據前台顯示情形輸入以避免文字過多而超出</font>
+                  </td>
+             </tr>
+           </table>
+      </div>
+      
+      <div class="buttonA">
+
+           <input name="update_time" type="hidden" id="update_time" value="{$time}" />
+           <input name="company_logo_old" type="hidden" id="company_logo_old" value="{$vo.company_logo}" />
+           <input name="company_pic_old" type="hidden" id="company_pic_old" value="{$vo.company_pic}" />
+           <ul>
+                <li class="btnA"><a onclick="javascript:document.getElementById('mainFrom').submit();">送出</a></li>
+           </ul>
+      </div>
+      </form>
+
+    </div>
+  </div>
+<!-----主內容 end------>
+
+     <include file="Public:footer" />
+
+</body>
+</html>

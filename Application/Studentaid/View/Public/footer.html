@@ -1,0 +1,39 @@
+<!-- footer start -->
+<footer _height="none">
+</footer>
+<!--主背景框END-->
+</body>
+<link rel="stylesheet" href="__PUBLIC__css/jquery-ui.css">
+
+<script src="__PUBLIC__js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__js/jquery-ui.js"></script>
+<script src="__PUBLIC__js/facebook.js"></script>
+<!-- 輪播圖片控制設定 -->
+<script type="text/javascript" src="__PUBLIC__js/script.js"></script>
+<!-- 頁面高度滿版  --> 
+<!-- 回到頁頂  -->
+<script>
+	
+	var styles = 'background: #f00; color: #fff; padding: 0 100px; font-size: 30px;';  
+	
+	console.log("%c" +"放下你萬惡的右手(´;ω;`)", styles);
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.5&appId=431779660362216";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));		
+</script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91663402-3', 'auto');
+  ga('send', 'pageview');
+   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { 
+   	alert("因為課表數據多，所以沒有設計手機版的介面，請同學還是用電腦來瀏覽體驗會最佳")
+   }
+</script>
+</html>

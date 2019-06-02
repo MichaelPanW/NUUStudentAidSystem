@@ -1,0 +1,212 @@
+/********************* 主選單 ********************/
+#Menu{
+	float: left;
+	width: 10%;
+	height: auto;
+	background-color:rgba(255,255,255,1);
+
+	overflow:hidden;
+}
+.MenuDiv{
+	float: left;
+	width: 100%;
+}
+.iteMenu{
+	width: 100%;
+	list-style:none;
+	border-right:1px solid #9a9a9a;
+	border-bottom:1px solid #9a9a9a;
+	background-repeat: no-repeat;
+    background-position: 10px 50%;
+    background-size: 20px;
+}
+
+.iteMenu p{
+	cursor: pointer;
+}
+.nav{
+	float:left;
+	top:10%;
+	left:7%;
+	position:absolute;
+	display: block;
+	width: 15%;
+	background-color:#999999;
+	z-index:1;
+}
+
+.nav *:hover{
+	cursor:pointer;
+}
+
+
+
+/********************分層選單********************/
+.iteNavAC{
+	float:left;
+	width:100%;
+}
+.iteNavAC a{
+	width:100%;
+	display:block;
+	font-size:32px;
+	color:#FFFFFF;
+	position:relative;
+	text-decoration:none;
+	border-bottom:1px solid #ececec;
+	text-align:center;
+	z-index:1;
+}
+.iteNavAC .grayAC{
+	background-color:#313B46;
+}
+.iteNavAC a p:hover{
+	cursor:pointer;
+	/*-webkit-animation: loading 1s infinite linear;
+	-moz-animation: loading 1s infinite linear;
+	-o-animation: loading 1s infinite linear;
+	animation: loading 1s infinite linear;*/
+}
+@-webkit-keyframes loading {
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes loading {
+from {-moz-transform: rotate(0deg);}
+to {-moz-transform: rotate(360deg);}
+}
+@-o-keyframes loading {
+from {-o-transform: rotate(0deg);}
+to {-o-transform: rotate(360deg);}
+}
+@keyframes loading {
+from {transform: rotate(0deg);}
+to {transform: rotate(360deg);}
+}
+
+.iteNav, .iteNavAC{
+	float:left;
+	width:100%;
+}
+.iteNav{
+	display:none;
+}
+/*.iteNav input[type="text"]{
+	float:left;
+	width:25px;
+	height:25px;
+	line-height:25px;
+	font-size:20px;
+	margin:25px 15px;
+	text-align:center;
+	position: relative;
+	z-index:9999;
+}*/
+
+
+.iteNav li{
+	height:50px;
+}
+.iteNav ul{
+	margin:0;
+	padding:0;
+    list-style-type: none;
+}
+.iteNav a{
+	width:100%;
+	line-height:40px;
+	display:block;
+	font-size:14px;
+	position:relative;
+	text-decoration:none;
+	border-bottom:1px solid #ececec;
+	z-index:1;
+}
+
+
+
+.iteNav ul li a, ul.submenu li a, ul.lastmenuul li a{
+
+	margin:0 0 0 50px
+
+}
+ul.submenu li a{
+	width:95%;
+	padding-left:5%;
+}
+.iteNav ul li input, ul.submenu li input, ul.lastmenuul li input{
+	width:15%;
+	position:absolute;
+	top:10px;
+	right:5px;
+	display:block;
+	z-index:2;
+}
+/*.iteNav ul li a{
+	background-color: #686D72;
+}
+*/
+ul.submenu ul li, ul.lastmenuul ul li{
+	background-color: #7C8288;
+}
+.iteNav ul.submenu{
+	width:100%;
+    color:#333333;
+    list-style-type: none;
+	background-color: #7C8288;
+	color:#FFF;
+	cursor: pointer;
+}
+
+.iteNav ul.lastmenu{
+	width:100%;
+    color:#333333;
+    /*display:none;*/
+    list-style-type: none;
+	color:#FFF;
+}
+
+.iteMenu a{
+	line-height:50px;
+	font-size:14px;
+	text-decoration:none;
+	display:block;
+	color:#20242a;
+	cursor:pointer;
+	
+}
+.iteMenu a img{
+	width:25px;
+	height:25px;
+    vertical-align: middle;
+	margin:10px;
+}
+/************************* 新增類別用 ***************************/
+.textAC, .inArea2{
+	width:98%;
+	background:#686D72;
+}
+.textAC a input, .inArea2 a input{
+	width:98%;
+	font-size:16px;
+	margin-left:2px;
+	background-color:#686D72;
+	color:rgba(255,255,255,1);
+	border: none;
+}
+
+.textAC a p, .showtarget2 a p{
+	font-size:16px;
+	text-align:center;
+}
+.textAC a p:hover, .showtarget2 a p:hover{
+	border: 1px #9FF outset;
+	text-decoration:none;
+}
+
+#addMenu, .addSubMenu{
+	text-align:center;
+}
+#addMenu:hover, .addSubMenu:hover{
+	text-decoration:none !important;
+}

@@ -1,0 +1,419 @@
+@import url("reset.css");
+
+html {
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+	min-height:100%;
+    margin: 0;
+    padding: 0;
+    font-family:"微軟正黑體",Arial, Helvetica, sans-serif;
+    word-wrap:break-word;/*英文換行*/
+    word-break:normal;/*英文換行*/
+	
+	/*background-color:#eee;*/
+
+}
+
+/* =======================彈跳視窗======================= */
+
+#note-wrapper,#note-wrapperB{
+	width:720px;
+	
+	margin:20px auto;
+	background-color:#FFF;
+	
+	padding:20px;
+	/*border:#CCC 1px solid;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);*/
+	
+	position:relative;
+
+}
+
+#note-wrapper{
+	height:460px;
+
+}
+
+.note-main .note-head{
+	height:80px;
+	width:720px;
+}
+
+
+.note-main .note-head h1{
+	font-size:30px;
+	line-height:80px;
+	text-align:center;
+	font-weight:600px;
+	color:#333;			
+}
+
+.note-main .note-head .line{
+	height:3px;
+	background-image:url(../images/p-bg02.png);
+}
+
+.note-main .note-container,.note-main .note-containerB{
+	display:table-cell;
+	width:720px;
+	
+	
+	vertical-align:middle;
+}
+
+.note-main .note-container{
+	height:auto;
+}
+
+.note-main .note-containerB{
+	height:300px;
+}
+
+.note-main p{
+	color:#333;
+	font-size:16px;
+	line-height:28px;
+	text-align:center;	
+}
+
+.note-main ul{
+	padding:40px 0;
+}
+.note-main li{
+	color:#333;
+	font-size:16px;
+	line-height:28px;
+	text-align:left;
+	
+	margin-bottom:10px;
+}
+.note-main .note-btn{
+	height:50px;
+	text-align:center;
+	overflow:hidden;
+}
+
+.note-main .note-btn a{
+	width:140px;
+	height:30px;
+	
+	display:block;
+	display:inline-block;
+	text-decoration:none;
+	text-align:center;
+	
+	color:#FFF;
+	font-size:15px;
+	font-weight:700;
+	line-height:30px;
+	
+	margin:0 5px;
+	
+	border-radius:3px;			
+}
+
+.note-main .note-btn a.out{
+	background-color:#8f0007;
+}
+
+.note-main .note-btn a.cancelto{
+	background-color:#666;
+}
+
+.note-main .note-btn a:hover{
+	background-color:#a7a7a7;
+	cursor: pointer;
+}
+
+/*---- ember-boxA 和style.css 一樣----*/
+
+.member-boxA{
+	width:500px;
+	margin:0 auto;
+
+	color:#000;	
+}
+
+
+.member-boxA h3,.member-boxB h3{
+	font-size:28px;
+	font-weight:300;
+	margin-bottom:30px;
+	display:inline-block;
+	
+}
+
+
+.member-boxA .note{
+   display:inline-block;
+   margin-left:10px;
+   vertical-align:middle;	
+}
+
+.member-boxA li{
+	height:70px;
+	font-size:16px;
+	line-height:35px;
+	
+	margin-bottom:10px;	
+		
+}
+
+.member-boxA a{
+	text-decoration:none;
+	display:block;
+	height:35px;
+	
+	color:#333;
+	margin-right:5px;
+	
+	float:right;
+	
+}
+
+.member-boxA a:hover{
+	color:#8f0007;
+}
+
+
+.member-boxA li a.m-register{
+    text-align:center;
+    background-color:#333333;
+}
+
+.member-boxA li a.m-register-fb{
+	text-indent:35px;
+	background-image:url(../images/fb-icon.png);
+	background-repeat:no-repeat;
+	background-position:left;
+	background-color:#3d5b99;	
+}
+
+.member-boxA li a.m-register,.member-boxA li a.m-register-fb{
+	width:140px;
+	margin-bottom:5px;
+	
+	color:#FFF;
+    font-size:13px;
+	font-weight:700;
+	line-height:35px;
+	
+	border-radius:3px;
+}
+
+.member-boxA li a.m-register:hover,.member-boxA li a.m-register-fb:hover{
+	background-color:#a7a7a7;
+}
+
+.member-boxA li a.outto{
+	width:498px;
+	
+	margin:10px auto;
+	
+	color:#FFF;
+	line-height:35px;
+	text-align:center;
+	
+	background-color:#8f0007;
+	
+}
+
+.member-boxA li a.outto:hover{
+	background-color:#a7a7a7;
+}
+
+
+.member-boxA li input{
+	width:493px;
+	height:30px;		
+}
+
+.member-boxA li input.intext{
+	width:200px;
+	margin-right:10px;
+}
+
+.member-boxA li input.intextB{
+	width:257px;
+}
+
+.member-boxA li input.intextC{
+	width:330px;
+}
+
+.member-boxA input.choose{
+     width:16px;
+	 height:16px; 
+	 
+	 margin:2px 5px 8px 5px;
+	 vertical-align:middle;	 	 
+}
+
+.member-boxA li.area{
+	display:inline-table;
+	
+}
+
+.member-boxA li.area textarea{
+	 width:350px;
+	 height:150px;
+	 vertical-align:top;
+}
+
+.member-boxA li img{
+	vertical-align:middle;
+}
+
+.member-boxA li select{
+	width:110px;
+	height:34px;
+	margin-left:5px;	
+}
+
+.member-boxA li input,.member-boxA li select{
+	vertical-align:middle;
+}
+
+.member-boxA .not-modify{
+	width:493px;
+	height:30px;
+	
+	color:#333;
+	font-size:13px;
+	padding-left:5px;
+	
+	border:#999 1px solid;
+	background-color:#ddd;
+	
+}
+
+.member-boxA li input,.member-boxA li select{
+
+	color:#999;
+	font-size:13px;
+	padding-left:5px;
+	
+}
+
+/*#note-wrapper .close{
+	position:absolute;
+	top:-10px;
+	right:-10px;
+	
+	z-index:10;
+}
+
+#note-wrapper .close a{
+	width:45px;
+	height:45px;
+	display:block;
+	
+	background-color:#666;
+}
+
+#note-wrapper .close a:hover{
+	background-color:#8f0007;
+}
+*/
+
+
+@media screen and (max-width: 770px){
+
+#note-wrapper,#note-wrapperB{
+	width:100%;
+	
+	margin:20px auto;
+	
+	padding:10px;
+	
+}
+
+#note-wrapper{
+	height:auto;
+}
+
+.note-main .note-head{
+	width:100%;
+	height:auto;
+	
+	margin:0 auto;
+}
+
+.note-main .note-head h1{
+	text-indent:-17px;
+	
+}
+
+.note-main .note-head .line{
+	width:95%;
+}
+.note-main .note-container{
+	height:auto;
+	
+}
+
+.note-main .note-containerB{
+	padding-top:50px;
+	
+	height:150px;
+}
+.note-main .note-container,.note-main .note-containerB{
+	width:95%;
+	display:block;
+	
+}
+.note-main .note-container ul{
+	padding:20px 0;
+}
+
+
+.note-main .note-btn a{
+	margin-left:0;
+}
+
+.note-main .note-btn a.out{
+	margin-left:-15px;
+}
+
+
+.member-boxA{
+	width:100%;
+	
+}
+
+.member-boxA li{
+	font-size:14px;
+}
+.member-boxA li.area{
+	display:block;
+	height:200px;
+}
+.member-boxA li.area textarea{
+	width:100%;
+}
+
+
+.member-boxA li input{
+	width:97%;
+}
+
+.member-boxA li input.intext{
+	width:30%;
+}
+
+.member-boxA li input.intextC{
+	width:97%;
+}
+
+.member-boxA li select{
+	width:19%;
+}
+
+}
+

@@ -1,0 +1,116 @@
+<!DOCTYPE>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>{$con['contactname']}</title>
+	<meta property="og:title" content="聯合大學選課輔助系統" />
+
+	<meta property="og:description" content="最方便的選課輔助系統歐~~~" />
+
+	<meta property="og:url" content="http://studentaid.nuucloud.com/" />
+	<meta property="og:image"              content="__PUBLIC__images/studentaid.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="__PUBLIC__images/title_icon.ico" />
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+	<!--RWD設定-->
+	<!--電腦螢幕寬度1920px-1280px-->
+	<link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+
+	<!--1280以下-->
+	<!--ipad 橫放/電腦螢幕-->
+	<link href="__PUBLIC__/css/style-large.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 770px) and (max-width: 1280px)"
+	/>
+
+	<!--手機直立/手機橫放/ipad直立-->
+	<link href="__PUBLIC__/css/style-small.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 0px) and (max-width: 769px)"
+	/>
+
+</head>
+
+<body>
+
+	<div class="first_box">
+		<div class="top_index"><a>
+				{$con['contactname']}
+			</a><br>
+			<div class="fb-like" data-href="http://studentaid.nuucloud.com/" data-layout="standard" data-action="recommend" data-show-faces="true"
+			    data-share="true" style="color:#fff"></div>
+		</div>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">選單</a></li>
+				<li><a href="#tabs-2">登入</a></li>
+			</ul>
+			<div id="tabs-1">
+				<form action="{:u('Work/index')}" method="post">
+					<br>
+					<a>請選系</a>
+					<select class="department" name="department">
+							<volist name="lastdata" id="vo">
+								<option>{$vo['lastclass']}</option>
+							</volist>
+							
+						</select>
+					<br><br>
+
+					<a>請選班</a>
+					<select class="class" name="class">
+							<option>無班級</option>
+						</select><br><br>
+					<input type=submit class=gobu value=輸入>
+				</form>
+
+			</div>
+			<div id="tabs-2">
+				<form action="{:u('Index/dologin')}" method="post">
+					<br>
+					<font color="#ff0000">*請在選單選完系別綁定後才可登入歐!!</font><br> 帳號
+					<input type="text" name="account" /><br><br> 密碼
+					<input type="password" name="password" /><br><br>
+					<input type="submit" class="gobu" value="登入" />
+				</form>
+			</div>
+		</div>
+
+		<div class="right_tabs">
+			<div style="margin:20px;border:2px #ccc solid;border-radius:10px;text-align: center;font-size: 30px;color:#ff0000">瀏覽量:{$con['recommendnum']} 綁定帳號:{$user}  更新日期:{$con['update_time']|date="Y/m/d",###} </div>
+			{$content['status_description']}
+		</div>
+	</div>
+
+	<div class="first_box">
+
+		<div class="pagetitle" style="color:#fff"><a>顯示說明&nbsp;&nbsp;&nbsp;</a></div>
+		<img src="__PUBLIC__images/teach.png" class="teach" />
+	</div>
+	<div id="fb"></div>
+
+	<include file="Public:footer" />
+	<script>
+		$("#tabs").tabs();
+		var myhtml = $.ajax({
+			type: "POST", //傳值方式有分 post & get 
+			url: '{:U("Index/class_post")}',
+			data: {
+				name: $('.department').val()
+			}, //將表單的值設定好
+			async: false
+		}).responseText;
+
+		$('.class').html(myhtml);
+		$('.department').change(function () {
+			var myhtml = $.ajax({
+				type: "POST", //傳值方式有分 post & get 
+				url: '{:U("Index/class_post")}',
+				data: {
+					name: $(this).val()
+				}, //將表單的值設定好
+				async: false
+			}).responseText;
+			$('.class').html(myhtml);
+
+
+		});
+		show_fb_talks('fb', $(window).width(), 10, 'http://studentaid.nuucloud.com/');
+	</script>

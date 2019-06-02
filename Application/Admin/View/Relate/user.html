@@ -1,0 +1,22 @@
+<include file="Public:header" />
+<include file="Public:sider_left" />
+<!-----主內容------>
+<div class="container">
+    <div class="tabTitle">{$parent.title} > <span class="conTitle">更新資料</span></div>
+    <div class="Main">
+    每學期更換課表時使用，會將使用者資料還原
+    <br>
+        <font color="red">*此功能會將使用者選的選課資料清空，請警慎使用</font>
+        <form action="{:u('Relate/onreuser')}" id="loadupdata" method="post" enctype="multipart/form-data">
+            <input type="submit" value="重整" />
+        </form>
+
+    </div>
+    <!-----主內容 end------>
+    <include file="Public:footer" />
+    <script src="http://malsup.github.io/jquery.form.js"></script>
+    <script>
+    </script>
+    </body>
+
+    </html>

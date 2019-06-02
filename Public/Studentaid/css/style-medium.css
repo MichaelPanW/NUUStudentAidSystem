@@ -1,0 +1,284 @@
+.toggle {
+	width:50px;
+	display: inline-block;
+	background: #D8540A;
+	text-align:center;
+	padding:10px;
+	position: fixed;
+	right:0;
+	top:0;
+	z-index:9999;
+	color: #FFF;
+}
+.toggle a{
+	color: #FFF;
+	text-decoration:none;
+}
+
+
+/*----- 首頁抬頭與選單 -----*/
+.headerH {
+	width:240px;
+	min-height:100%;
+	padding: 0px;
+	background:url(../images/header_bg.png) #FFE7EE repeat-x ;
+	position: absolute;
+	top:0;
+	left:-240px;
+	transition:left .2s ease-in;
+	z-index:9999;
+	overflow:hidden;
+}
+.menuBGH{
+	width:100%;
+	min-height:100%;
+	padding: 0px;
+	background: url(../images/nav_bg.png) ;
+	position: absolute;
+	top:0;
+	left:-100%;
+	z-index:999;
+	transition:left .2s ease-in;
+}
+.headerH_listTo{
+	left:0 !important;
+}
+.menuBGH_listTo{
+	left:0 !important;
+}
+
+.headerH .nav {
+	float: left;
+	width:0;
+}
+/* LOGO */
+.headerH .Logo {
+	width:240px;
+	height:128px;
+	margin:auto;
+	padding-bottom:0px;
+	position: relative;
+}
+/* 選單 */
+.headerH .Menu {
+	width:240px;
+	padding:0;
+	margin:0px auto;
+	position: relative;
+	overflow:hidden;
+}
+.headerH .Menu li {
+	float: left;
+	width: 175px;
+	height:90px;
+	padding:0 0 0 30px;
+	margin:0;
+	list-style:none;
+	position:relative;
+}
+/* 首頁大突 */
+.pcchlight_wrapper {
+	width:100%;
+	margin: 0 auto;
+}
+.pcchlight_show {
+	width:100%;
+	height: auto;
+	position: relative;
+	z-index:2;
+}
+.pcchlight_show img{
+	width:100%;
+	height: auto;
+	position: relative;
+}
+
+/* 內頁選單 */
+
+.navC {
+	width:240px;
+	min-height:100%;
+	padding: 0 6px 40px 36px;
+	margin:0;
+	position: absolute;
+	background:url(../images/menu_bg.png) top left no-repeat;
+	top:0;
+	left:-245px;
+	transition:left .2s ease-in;
+	z-index:9999;
+}
+.navC_listTo{
+	left:0 !important;
+}
+
+/***********大圖倫播************/
+.pcchlight_wrapper {
+	width: 768px;
+	margin: 0 auto;
+}
+.pcchlight_show {
+	width: 762px;
+	height: 480px;
+	position: relative;
+}
+
+/***********首頁新聞&環境介紹************/
+.columnNews{
+	width:100%;
+	height: auto;
+	margin:0 auto;
+	position: relative;
+	overflow:hidden;
+}
+.newsHome{
+	float:left;
+	width:98%;
+	height: auto;
+	margin:0 auto;
+	padding:0 1%;
+	position: relative;
+}
+.guildHome{
+	float:left;
+	width:36%;
+	margin:0 6%;
+}
+.guildHome img{
+	width:100%;
+	height:auto;
+}
+/**---------- 子選單設定 ---------**/
+
+.header .layoutC{
+	width:96%;
+	margin: 0 2% 0 2%;
+	height:30px;
+	padding: 0px;
+	text-align:center;
+	display: inline-block;
+	position: relative;
+}
+
+/**---------- 內容設定 ---------**/
+.Container {
+	width:96%;
+	margin: 0 2% 0 2%;
+	min-height:600px;
+	position: relative;
+	/*background-color:#666;*/
+}
+
+/********* 編輯器 <P>的圖形 *********/
+.htmltext p img{
+	width:60%;
+	height:auto;
+}
+
+/********* 關於我們 *********/
+
+/** 緣起 **/
+.Container .summaryC{
+	font-size:21px;
+}
+
+/********* 最新消息 *********/
+
+/** 最新訊息與活動 **/
+.Container .news ul li{
+	width:95%;
+	padding:0 0 0 5%;
+}
+
+.Container .news .titleNews{
+	width:96%;
+	padding:0 0 0 4%;
+}
+
+/***********表格************/
+.Container .tableAll, .Container .tableAll2, .Container .tableAll3, .Container .tableAll4{
+	float:left;
+	width:100%;
+	margin:20px 0 0 0;
+	padding:0;
+}
+.Container .tableAll table th, .Container .tableAll2 table th, .Container .tableAll3 table th, .Container .tableAll4 table th{
+	font-size:14px;
+	padding:0 2px;
+}
+.Container .tableAll table td, .Container .tableAll2 table td, .Container .tableAll3 table td, .Container .tableAll4 table td{
+	padding:0 2px;
+	font-size:14px;
+}
+/***報名&問題***/
+.Container .classroom .boxCRoom .column{
+	float:left;
+	width:19%;
+	height:36px;
+	text-align:center;
+	line-height:36px;
+	
+}
+.Container .classroom .boxCRoom .input{
+	float:left;
+	width:80%;
+	height:40px;
+	line-height:40px;
+}
+/***QA***/
+.Container .qa .layoutQA .titleSpeech{
+	width:95%;
+	font-size:18px;
+	padding:0 1% 0 4%;
+}
+/************衛教*****************/
+.Container .education .layoutED1 .titleSpeechA{
+	width:95%;
+	padding:0 0 0 5%;
+}
+.Container .education .layoutED1 .msgA li{
+	width:95%;
+}
+
+.Container .education .layoutED2 .titleSpeechA{
+	width:95%;
+	padding:0 0 0 5%;
+}
+.Container .education .layoutED2 .msgA li{
+	width:95%;
+}
+/*************篩檢***************/
+
+.Container .examination{
+	width:100%;
+}
+
+/***********帶小凸輪播************/
+.pgwSlideshow{
+	width:100%;
+}
+.pgwSlideshow .ps-current > ul  > li img {
+    width: auto;
+	height:400px;
+	margin:auto;
+}
+
+
+/*--------- 底部資訊設定 -----------*/
+.sidebarF {
+	width:100%;
+	margin: 0 auto;
+}
+.sidebarF .logoF {
+	float: none;
+	width: 260px;
+	height: 70px;
+	margin:0 auto;
+}
+.sidebarF .copyright {
+	float: none;
+	text-align: center;
+	line-height:25px;
+	font-size: 14px;
+	color:#3e3e3e;
+	margin:10px auto;
+}

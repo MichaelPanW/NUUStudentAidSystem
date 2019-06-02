@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+<head>
+<title>頁面提示</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.9; maximum-scale=0.9; user-scalable=0;">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv='Refresh' content='{$waitSecond};URL={$jumpUrl}'>
+<!--<load href ="__PUBLIC__/backstage/css/style.css" />-->
+<link href="__PUBLIC__/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#eee9d9;position:relative;">
+<div class="message">
+<table cellpadding=0 cellspacing=0 >
+	<tr>
+		<td height='5' class="topTd" ></td>
+	</tr>
+	<tr class="row" >
+		<th class="tCenter space" style="font-family:'微軟正黑體', Arial, Helvetica, sans-serif;line-height:2em;color:#191919;text-align:center;">{$msgTitle}</th>
+	</tr>
+	<present name="message" >
+	<tr class="row">
+		<td align="center" style="color:#000000;line-height:2em;font-size:1.2em;font-family: '微軟正黑體', Arial, Helvetica, sans-serif;">{$message}</td>
+	</tr>
+	</present>
+	<present name="error" >
+	<tr class="row">
+		<td align="center" style="color:#000000;line-height:2em;font-size:1.2em;font-family: '微軟正黑體', Arial, Helvetica, sans-serif;">{$error}</td>
+	</tr>
+	</present>
+	<present name="closeWin" >
+		<tr class="row">
+		<td>系統將在<span style="color:#434343;font-weight:bold;line-height:2em;">{$waitSecond}</span>秒後自動關閉，如果不想等待，直接點擊<a href="{$jumpUrl}">這裏</a>關閉</td>
+	</tr>
+	</present>
+	<notpresent name="closeWin" >
+	<tr class="row">
+		<td>系統將在<span style="color:#434343;font-weight:bold;line-height:2em;">{$waitSecond}</span>秒後自動跳轉,如果不想等待，直接點擊<a href="{$jumpUrl}">這裏</a>跳轉</td>
+	</tr>
+	</notpresent>
+	<tr>
+		<td height='5' class="bottomTd"></td>
+	</tr>
+	</table>
+</div>
+</body>
+</html>
+

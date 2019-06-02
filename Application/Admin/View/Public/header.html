@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw" xml:lang="zh-tw">
+
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+
+<title>{$configAll.company_name}後台總管理</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="__PUBLIC__/images/icon.ico"/>
+<!--網頁初始化設定-->
+<link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+<!--選單設定-->
+<link href="__PUBLIC__/css/menu.css" rel="stylesheet" type="text/css" />
+<!--CSS設定-->
+<link href="__PUBLIC__/css/reset.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<!-- wrapper start -->
+<div id="wrapper">
+
+  <!-- header start -->
+  <div id="header">
+    <div id="menuA" class="Logo">
+         
+				<a href="/index.php/Admin">{$company_name}後台管理</a>
+    </div>
+    <!--會員狀態-->
+    <div class="status">
+      <!-- 多語言用 start -->
+      <!--<div class="languageBtn">
+        <ul>
+                <li id="cn"><a href="/Admin/">中</a></li>
+                <li id="en"><a href="/Admin_en/">英</a></li>
+                <li id="jp"><a href="/Admin_jp/">日</a></li>
+                <li id="ko"><a href="/Admin_ko/">韓</a></li>
+        </ul>
+      </div>-->
+      <!-- 多語言用 end -->
+      <!--登出-->
+      <div class="logout"><a href="{:U('Public/logout')}"><img src="__PUBLIC__/images/logout.png" title="登出" alt="登出" width="30" height="30"></a></div>
+      <!--帳戶名稱-->
+      <div class="account"><strong>{$company_name} 歡迎你！{$username}</strong></div>
+      <!--會員照-->
+    </div>
+  </div>
+  <!-- header end -->

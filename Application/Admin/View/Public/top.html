@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>『萬用程式後臺管理』</title>
+<link rel='stylesheet' type='text/css' href='__PUBLIC__/Style/style.css'>
+<base target="main" />
+</head>
+<body>
+<!-- 頭部區域 -->
+<div id="header" class="header">
+<div class="headTitle" style="margin:8pt 10pt"> 萬用程式後臺管理平臺 </div>
+	<!-- 功能導航區 -->
+	<div class="topmenu">
+</div>
+	<div class="nav">
+	歡迎你！{$Think.session.userName}
+	<a href="__URL__/password/"><img src="__PUBLIC__/Images/checked_out.png" width="16" height="16" border="0" alt="" align="absmiddle"> 修改密碼</a> <a href="__URL__/profile/"><img SRC="__PUBLIC__/Images/write.gif" WIDTH="17" HEIGHT="16" BORDER="0" ALT="" align="absmiddle"> 修改資料</a> <a href="__URL__/logout/" target="_top"><img SRC="__PUBLIC__/Images/error.gif" WIDTH="20" HEIGHT="20" BORDER="0" ALT="" align="absmiddle"> 退 出</a></div>
+</div>
+<script>
+function sethighlight(n) {
+	var lis = document.getElementsByTagName('span');
+	for(var i = 0; i < lis.length; i++) {
+		lis[i].className = '';
+	}
+	lis[n].className = 'current';
+}
+sethighlight(0);
+</script>
+</body>
+</html>

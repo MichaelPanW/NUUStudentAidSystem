@@ -1,0 +1,105 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<!-----主內容------>
+<div class="container">
+	<div class="tabTitle">{$parent.title} > <span class="conTitle">班級列表</span></div>                           
+    <div class="Main">
+		<if condition="$Think.session.roleId eq 1">
+		計畫:  
+		<select id="mid">
+			<volist name="al" id="co"> 
+
+			<if condition="$co['lastclass'] eq $id">
+					<option  selected>{$co.lastclass}</option>
+			<else />
+					<option >{$co.lastclass}</option>
+			</if>
+			</volist> 
+		</select>
+		</if>
+			<!-- 按鈕 start -->
+			<div class="buttonA">
+				<input type="hidden" name="operate" id="operate2" />
+				<input name="jumpUri" type="hidden" id="jumpUri" value="__SELF__" />
+				<li class="btnB"><form id="autoform"><input type="button" id="auto" value="自動產生" /></form></li>
+				<font color="red">*會從課程資料中自動產生班級清單</font>
+				<div class="selectLable" style="text-align:right">
+					{$pageA}
+				</div>
+			</div>
+			<!-- 按鈕 end -->
+			
+			<!--表格區-->
+			<div class="tableListA">
+				<table>
+					
+					
+					<tr>
+						<td width="4%" align="center" valign="middle">&nbsp;</td>
+						<td width="3%" align="center"><input type="checkbox" class="allChecked" ></td>
+						<td>科系</td>
+						<td>班級</td>
+					</tr>
+					<!-- db 項目 start -->
+					<present name="dataList">
+						<volist name="dataList" id="vo">
+							<tr>
+								<td width="4%" align="center" valign="middle">{$p*5-5+$i}</td>
+								<td width="3%" align="center">
+									<input id="killId" name="id[]" type="hidden" value="{$vo.id}">
+									<input name="UpdateId[]" type="hidden" value="{$vo.id}" />
+									<input name="typeId[]" type="hidden" value="{$vo.id}" />
+									<input name="orders[]" class="checkOpt" style="width:20px;" type="text" maxlength="2" AutoComplete="Off" placeholder="{$vo.orders}" value='{$vo.orders}'>
+								</td>
+								<td>{$vo['lastclass']}</td>
+								<td>{$vo['class']}</td>
+							</tr>
+						</volist>
+						<else />
+						<tr><td colspan="9" style="color:#F00; font-weight:bold">暫無數據</td></tr>
+					</present>
+					<!-- db 項目 end -->
+					
+				</table>
+			</div>
+
+			
+		</div>
+</div>
+<!-----主內容 end------>
+
+<include file="Public:footer" />
+
+<script>
+	$('#mid').change(function(){
+		window.location.href="{:U('Relate/myclass')}"+'?id='+$(this).val(); 
+	})
+	$("#auto").click(function(){
+        $("#autoform").ajaxSubmit({
+            //dataType:'script',
+            type: 'get',
+            url: "{:u('Relate/autoclass')}",
+            beforeSubmit: function() {
+                $('.loading').css('display', 'block');
+            },
+            success: function(data) {
+                alert("產生成功");
+                window.location.reload();
+
+            },
+            error: function(data) {
+                alert("產生失敗");
+                window.location.reload();
+
+            },
+            resetForm: false,
+            clearForm: false
+        });
+	})
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,141 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<script language="javascript" type="text/javascript">
+function checkAll(form, name, status) 
+{
+	for(var i = 0; i < form.elements.length; i++){
+		var e = form.elements[i];
+		if(e.name.match(name)){
+			e.checked = status;
+		}
+	}
+}
+
+function check_form() 
+{
+	var email=$("#email").val();
+	var emailPat = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
+	
+	if(email.match(emailPat) === null){
+		alert('電子信箱格式資料錯誤');
+		return false;
+	}
+	return true;
+}
+</script>
+<!--<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/lang/zh_TW.js"></script>
+<script>
+        var editor;
+        KindEditor.ready(function(K) {
+                editor = K.create('#descriptions', {
+					    afterBlur: function(){this.sync();},
+                        langType : 'zh_TW',
+						items:[
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'quickformat', 'selectall', '|', 'fullscreen', '/', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+        'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'about'],
+						width:'100%',
+						height:'350px',
+						resizeType:0
+                });
+        });
+</script>-->
+
+<!-----主內容------>
+  <div class="container">
+  <div class="tabTitle">帳號列表 > <span class="conTitle">建立帳號</span></div>                           
+    <div class="Main">
+      <!-- 按鈕 start -->
+      <div class="buttonA">
+        <li class="btnB"><a name="add" onclick="javascript:document.location='__URL__/insert/id/{$parent.id}';" >新增</a></li>
+        
+        <div class="selectLable">
+        </div>
+      </div>
+      <!-- 按鈕 end -->
+      
+      <form method="post" action="{:U('Admin/doInsert')}" enctype="multipart/form-data" id="mainFrom">
+      <div class="tabB">
+           <table border="0" cellpadding="0" cellspacing="0" >
+             <tr>
+                  <td align="right" style="min-width:80px;"><font color="#FF0000"> *</font>帳號</td>
+                  <td><input name="username" type="text" size="40" value="" /></td>
+                  <td align="right" style="min-width:80px;"><font color="#FF0000"> *</font>姓名</td>
+                  <td><input name="realname" type="text" size="30" value="" /></td>
+             </tr>
+             <tr><td colspan="4"><hr /></td></tr>
+             <tr>
+                  <td align="right" style="min-width:80px;"><font color="#FF0000"> *</font>密碼</td>
+                  <td>
+                       <input name="password" type="password" id="password" size="41" placeholder="請輸入密碼" />
+                  </td>
+                  <td colspan="2">
+                       <input name="password1" type="password" id="password1" size="41" placeholder="再次輸入密碼" />
+                  </td>
+             </tr>
+             <!--<tr><td colspan="4"><hr /></td></tr>
+             <tr>
+                  <td align="right" style="min-width:80px;"><font color="#FF0000"> *</font>信箱</td>
+                  <td colspan="3">
+                       <input name="email" type="text" id="email" size="87" value="" />
+                  </td>
+             </tr>
+             <tr><td colspan="4"><hr /></td></tr>
+             <tr>
+                  <td align="right" style="min-width:80px;"><font color="#FF0000"> *</font>類型</td>
+                  <td>
+
+					 <select name="role_id" id="select">
+					   
+					<volist name="roleList" id="vo" key="k" > 
+						<option value="{$vo.id}"  >{$vo.role_name}</option>
+					</volist>
+                       </select>
+                  </td>-->
+                  <td align="right"><font color="#FF0000"> *</font>狀態</td>
+                  <td> 
+                    <label class="noclass">
+                      <input type="radio" name="status" value="1" id="status1" checked />開啟
+                    </label>
+                    <label class="noclass">
+                      <input type="radio" name="status" value="0" id="status0" />暫停
+                    </label>
+                  </td>
+             </tr>
+             <tr><td colspan="4"><hr /></td></tr>
+             </table>
+             <table border="0" cellpadding="0" cellspacing="0" >
+             <tr>
+                  <td colspan="4">
+                       <font color="#FF0000"> *電子信箱請確實填寫,以便忘記密碼時使用</font>
+                  </td>
+             </tr>
+           </table>
+      </div>
+      
+      <div class="buttonA">
+           <ul>
+                <li class="btnA"><a onclick="javascript:document.getElementById('mainFrom').submit();">送出</a></li>
+           </ul>
+      </div>
+      </form>
+
+    </div>
+  </div>
+<!-----主內容 end------>
+
+<script type="text/javascript">
+
+</script>
+
+     <include file="Public:footer" />
+
+</body>
+</html>

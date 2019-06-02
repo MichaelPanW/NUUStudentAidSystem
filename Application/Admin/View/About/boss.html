@@ -1,0 +1,172 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/lang/zh_TW.js"></script>
+<script>
+	var editor;
+	KindEditor.ready(function(K) {
+		editor = K.create('#descriptions', {
+			afterBlur: function(){this.sync();},
+			langType : 'zh_TW',
+			items:[
+			'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'cut', 'copy', 'paste',
+			'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+			'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+			'superscript', 'quickformat', 'selectall', '|', 'fullscreen', '/', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+			'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
+			'table', 'hr', 'emoticons', 'pagebreak',
+			'anchor', 'link', 'unlink', '|', 'about'],
+			width:'800px',
+			height:'300px',
+			resizeType:0
+		});
+	});
+</script>
+<!-----主內容------>
+<div class="container">
+	<div class="tabTitle">文章編輯 > <span class="conTitle">{$vo.name}</span></div>                           
+    <div class="Main">
+		<!-- 按鈕 start -->
+		<div class="buttonA">
+			<li class="btnB"></li>
+			
+			<div class="selectLable">
+			</div>
+		</div>
+		<!-- 按鈕 end -->
+		
+		<form method="post" action="{:U('About/doModifyBoss')}" enctype="multipart/form-data" id="mainFrom">
+			<div class="tabB">
+				<table border="0" cellpadding="0" cellspacing="0" >
+					
+					<if condition="$Think.session.roleId eq 1">
+					<tr>
+						<td>負責人:  <select id="mid">
+							<volist name="al" id="co"> 
+								<if condition="$co[id] eq $id">
+									<option value="{$co.id}"  selected="selected">{$co.name}</option>
+									<else />
+									<option value="{$co.id}">{$co.name}</option>
+								</if>
+							</volist> 
+						</select></td>
+					</tr>     
+					</if>
+
+					<tr>
+						<td colspan="1">介紹:</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="hidden" name="description" id="descriptions" value="{$vo.description|htmlspecialchars}">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="1">大頭貼:</td>
+					</tr>
+					<tr>
+                  <td colspan="6" align="center">
+                    <div class="upfile">
+                      <input type="file" name="photo[]"/>
+                      <img class="preview" src=<if condition="$vo.main_image neq ''">"/{$vo.main_image}"<else />""</if> alt="拖曳或點擊上傳" title="圖片上傳"/>
+                    </div>
+                  </td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<hr />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6">
+						<font color="#FF0000"> *請根據前台顯示情形輸入以避免文字過多而超出</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="buttonA">
+			<input type="hidden" name="id" value="{$id}" >
+			<!--<input type="hidden" name="main_image_old" value="{$vo.main_image}">-->
+			<ul>
+				<li class="btnA"><a onclick="javascript:document.getElementById('mainFrom').submit();">送出</a></li>
+			</ul>
+		</div>
+	</form>
+	
+</div>
+</div>
+<!-----主內容 end------>
+
+<include file="Public:footer" />
+<script>
+	$('#mid').change(function(){
+		window.location.href="{:U('About/boss')}"+'?id='+$(this).val(); 
+	})
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('input[type=file]').change(function(){
+      // get preview
+    var preId = $(this).attr('data-id');
+    // get file value
+    var val = $(this).val();
+    var fileName = $(this).val();
+    //顯示圖片名稱
+    if (fileName!==''){
+       var fileName = fileName.split('\\');
+       $("#picName").html(fileName[fileName.length-1]);
+    }
+    //檢驗圖片格式
+    if(!val.match( /.jpg|.gif|.png|.bmp|.jpeg/ ) ){
+      imgtype = false;
+      alert('檔案接受類型為:jpg gif png bmp jpeg!');
+    }else if(FileReader){
+      var reader = new FileReader(),
+      file = this.files[0];
+      reader.onload = function(e){
+        var image = new Image();
+        image.src = e.target.result;
+        //image.onload = function(){
+          //$('#upload').attr('action','');//上傳 
+        //};
+        
+        // 多圖版
+        /*var alt = val.match(/([a-zA-Z0-9_\u4E00-\uFA29]*)\.[efgijnp]{3,4}/);
+        $('#'+preId).parent().parent().find('#'+preId+'_alt').val(alt[1]);
+        $('#'+preId).attr('src', e.target.result);
+        $('#'+preId).show();*/
+        
+        // 單圖版
+        $('.preview').attr('src', e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }/*else{
+      //這是ie9版本
+      $(".preview").show();
+      var objPreviewSizeFake = $(".preview_size_fake").get(0);
+      var fileupload = $(this).get(0);
+      fileupload.select();
+      fileupload.blur();
+      path = document.selection.createRange().text;
+      
+      if(/"\w\W"/.test(path)){
+        path = path.slice(1,-1);
+      }
+      
+      objPreviewSizeFake.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = path; 
+      if(objPreviewSizeFake.offsetWidth > 200 || objPreviewSizeFake.offsetHeight > 300){
+        fill = false;
+        alert("尺寸應在200x300之間");
+      }
+      document.selection.empty();
+    }*/
+  });
+});
+</script>
+
+</body>
+</html>	

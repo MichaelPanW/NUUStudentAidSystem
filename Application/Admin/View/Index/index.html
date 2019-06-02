@@ -1,0 +1,118 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<script type="text/javascript">
+</script>
+
+
+
+
+<!-----主內容------>
+<div class="container">
+	<div class="tabTitle"></div>
+    <div class="Main">
+		<div id="Data_Content">
+			<ul>
+			<li style="background:#f34235;"><p class="li_word">{$num['total']}</p><br>總流量</li>
+			<li style="background:#9b26af"><p  class="li_word">{$num['today']}</p><br>今日流量</li>
+			<li style="background:#3e50b4"><p  class="li_word">{$news}</p><br>會員數</li>
+			</ul>
+			</div>
+		<div id="Mounth" style="width: 100%;height:50%;"></div>
+	</div>
+</div>
+<!-----主內容 end------>
+
+<script src="__PUBLIC__/Js/echarts.common.min.js"></script>
+<include file="Public:footer" />
+<script>
+	
+	var myMounth = echarts.init(document.getElementById('Mounth'));
+	
+	
+	optionMounth = {
+		title : {
+			text: '使用人數統計',
+			subtext: '統計',
+			x: 'center',
+			align: 'right'
+		},
+		grid: {
+			bottom: 80
+		},
+		tooltip : {
+			trigger: 'axis',
+			formatter: function(params) {
+				return params[0].name + '<br/>'
+				+ params[0].seriesName + ' : ' + params[0].value;
+			},
+			axisPointer: {
+				animation: false
+			}
+		},
+		legend: {
+			data:['流量'],
+			x: 'left'
+		},
+		dataZoom: [
+        {
+            show: true,
+            realtime: true,
+            start: 60,
+            end: 80
+		},
+        {
+            type: 'inside',
+            realtime: true,
+            start: 60,
+            end: 80
+		}
+		],
+		xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            axisLine: {onZero: false},
+            data : [
+            <volist name="date" id="vo" key="k">
+			
+		'{$vo['name']}',
+			
+		</volist>
+		''].map(function (str) {
+		return str.replace(' ', '\n')
+		})
+        }
+		],
+		yAxis: [
+        {
+		name: '流量',
+		type: 'value',
+		max: 1000
+        }
+		],
+		series: [
+        {
+		name:'流量',
+		type:'line',
+		hoverAnimation: false,
+		areaStyle: {
+		normal: {}
+		},
+		lineStyle: {
+		normal: {
+		width: 1
+		}
+		},
+		data:[
+		<volist name="date" id="vo" key="k">
+			'{$vo['value']}',
+		</volist>
+		'']
+        }
+		]
+		};
+		
+        myMounth.setOption(optionMounth);
+	</script>			

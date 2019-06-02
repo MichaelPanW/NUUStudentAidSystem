@@ -1,0 +1,67 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<!-----主內容------>
+  <div class="container">
+  <div class="tabTitle">關於丞惠 > <span class="conTitle">聯絡方式設定</span></div>                           
+    <div class="Main">
+      <!-- 按鈕 start -->
+      <div class="buttonA">
+        <li class="btnB"></li>
+        
+        <div class="selectLable">
+        </div>
+      </div>
+      <!-- 按鈕 end -->
+      
+      <form method="post" action="{:U('About/doModify')}" enctype="multipart/form-data" id="mainFrom">
+      <div class="tabB">
+           <table border="0" cellpadding="0" cellspacing="0" >
+             <tr>
+                  <td align="right">電話</td>
+                  <td>
+                       <input name="link" type="text" size="87" value="{$vo.link}" />
+                  </td>
+             </tr>
+             <tr><td colspan="2"><hr /></td></tr>
+             <tr>
+                  <td align="right">地址</td>
+                  <td>
+                       <input name="content" type="text" size="87" value="{$vo.content}" />
+                  </td>
+             </tr>
+             <tr><td colspan="2"><hr /></td></tr>
+             <tr>
+                  <td align="right">聯絡信箱</td>
+                  <td>
+                       <input name="seo" type="text" size="87" value="{$vo.seo}" />
+                  </td>
+             </tr>
+             <!--<tr><td colspan="2"><hr /></td></tr>
+             <tr>
+                  <td align="right">傳真</td>
+                  <td>
+                       <input name="seo" type="text" size="87" value="{$vo.seo}" />
+                  </td>
+             </tr>-->
+           </table>
+      </div>
+      
+      <div class="buttonA">
+           <input type="hidden" name="id" value="{$vo.id}" >
+           <input type="hidden" name="jumpUri" value="__URL__" >
+           <ul>
+                <li class="btnA"><a onclick="javascript:document.getElementById('mainFrom').submit();">送出</a></li>
+           </ul>
+      </div>
+      </form>
+
+    </div>
+  </div>
+<!-----主內容 end------>
+
+     <include file="Public:footer" />
+
+</body>
+</html>

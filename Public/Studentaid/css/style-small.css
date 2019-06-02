@@ -1,0 +1,644 @@
+@media screen and (max-width: 768px) {
+    /*對ipad相關尺寸*/
+    html {
+        overflow-x: hidden;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    /* -表頭- */
+    .header-main {
+        width: 100%;
+    }
+    .logo {
+        text-align: left;
+        margin-left: 10px;
+    }
+    .Menu {
+        display: none;
+        background: rgba(0, 162, 230, 0.6);
+    }
+    .main {
+        margin: 0!important;
+    }
+    .sns-link {
+        display: none;
+    }
+    .toggle {
+        display: block;
+        float: right;
+        font-size: 4em;
+        line-height: 100px;
+        color: #00a2e6;
+        margin-right: 15px;
+    }
+    .mainbav {
+        margin: 0;
+    }
+    /* -公司訊息- */
+    footer {
+        height: auto;
+    }
+    .footer-main {
+        width: 100%;
+    }
+    .copyright {
+        width: 100%;
+        height: auto;
+        float: none;
+        padding: 20px 5px;
+        margin: 0 auto;
+    }
+    .photonic {
+        margin-right: 15px;
+    }
+    .gotop {
+        clear: both;
+        float: none;
+    }
+    .gotop a {
+        width: 100%;
+        height: 50px;
+        font-size: 1em;
+        letter-spacing: 2px;
+        line-height: 50px;
+        margin-top: 20px;
+        border-top: #FFF 1px solid;
+        border-left: none;
+        border-right: none;
+        background-image: none;
+    }
+    .gotop a:hover {
+        background-image: none;
+    }
+    .footer-main .tel-banner {
+        width: 25%;
+        top: -320px;
+    }
+    .footer-main .tel-banner img {
+        width: 100%;
+    }
+    .footer-main .tel-banner02 {
+        display: none;
+    }
+    /* ---------------首頁--------------- */
+    .sliderWarp {
+        display: none;
+    }
+    .rwd-top-img,
+    .rwd-top-img img {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding-top: 50px;
+    }
+    .link-box {
+        width: 100%;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    .link-box a.boxA {
+        width: 20%;
+        padding: 5px;
+        margin: 5px;
+        border: #ddd 1px solid;
+    }
+    .link-box a.boxA h3 {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+    .link-box a.boxA img {
+        width: 30%;
+        height: auto;
+    }
+    .contact-main {
+        width: 100%;
+        height: auto;
+    }
+    .contact-main .title {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .contact-main .title h1,
+    .contact-main .title p {
+        display: block;
+    }
+    .contact-main .title h1 {
+        font-size: 1.6em;
+    }
+    .contact-main .title p {
+        font-size: 1em;
+        line-height: 1.6em;
+    }
+    .contact .c-infor,
+    .contact .mapA {
+        float: none;
+    }
+    .contact .c-infor {
+        position: static;
+        width: 50%;
+        text-align: center;
+        margin: 30px auto;
+    }
+    .contact .mapA {
+        width: 100%;
+    }
+    /* ------內頁共通----- */
+    #main {
+        width: 100%;
+        height: auto;
+        margin: 0!important;
+    }
+    .inpage-content {
+        width: 100%;
+    }
+    .web-breadcrumb ul {
+        float: left;
+    }
+    .submenu {
+        width: 35%;
+        min-height: 700px;
+        margin-right: 5px;
+    }
+    .submenu h2,
+    .submenu ul li a,
+    .submenu ul li ul li a {
+        width: 80%;
+    }
+    .submenu ul li a,
+    .submenu ul li ul li a {
+        background-position: 188px 18px;
+    }
+    .submenuB {
+        display: none;
+    }
+    .rwd-submenuB {
+        display: block;
+    }
+    .rwd-submenuB h2 {
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 1.5em;
+        line-height: 50px;
+        color: #FFF;
+        font-weight: 700;
+        background-color: #00a2e6;
+    }
+    .inpage-textA {
+        width: 60%;
+        float: left;
+    }
+    .inpage-title h1 {
+        width: auto;
+    }
+    .inpage-textB {
+        float: none;
+        width: 98%;
+        margin: 0 auto;
+    }
+    .contentA {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .abgne_tab ul.tabs,
+    .abgne_tab ul.tabs li {
+        height: auto;
+    }
+    .abgne_tab div.tab_container .tab_content {
+        padding: 0;
+    }
+    .abgne_tab ul.tabs li a {
+        padding: 0 5px;
+    }
+    .boxC .vacancy {
+        width: 100%;
+    }
+    .boxC .vacancy a {
+        width: 92%;
+        height: auto;
+        line-height: 30px;
+        background-position: 10px 8px;
+    }
+    .contentA .work .work-contect td.td01 {
+        width: 20%;
+    }
+    .contentA .boxB {
+        height: auto;
+    }
+    .contentA .boxB .l-infor {
+        float: none;
+        position: static;
+        width: 100%;
+    }
+    .contentA .boxB .r-map {
+        width: 100%;
+        float: none;
+        margin-top: 10px;
+        border: #ccc 1px solid;
+    }
+    /* ------ 表格 ------ */
+    .recruited {
+        width: 95%;
+        margin: 0 auto;
+    }
+    .recruited .r-title h4 {
+        width: 20%;
+    }
+    .recruited .r-title h6 {
+        width: 80%;
+    }
+    .recruited .r-titleB h4 {
+        width: 20%;
+    }
+    .form li {
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .form li select {
+        width: 20%;
+    }
+    .form li select.selectA {
+        width: 25%;
+    }
+    .form li input.intextA {
+        width: 25%;
+        margin-right: 20px;
+    }
+    .form li input.intextB {
+        width: 94%;
+        margin-top: 10px;
+    }
+    .form li input.intextC {
+        width: 10%;
+    }
+    .form li input.intextD {
+        width: 96%;
+        margin-top: 10px;
+    }
+    .form li.btn a {
+        margin-top: 20px;
+    }
+    .PeopleIcon {
+        width: 100%;
+    }
+    .right_tabs{
+        width: 100%;
+        position: relative;
+        padding: 0;
+    height:auto;
+    right: 0;
+
+
+    }
+    .first_box{
+        width: 100%;
+        position: relative;
+        height: auto;
+        display: block;
+    }
+    .top_index{
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+    .teach{
+
+    width: 100%;
+    }
+    #tabs{
+        position: relative;
+        width: 100%;
+        left: 0;
+        top: 0;
+
+    }
+
+    #left ,#right {
+    width: 100%;
+	}
+}
+
+
+/*------關於-----*/
+
+.about_menu .about_tital {
+    display: none;
+}
+
+.hbg .content {
+    display: none;
+}
+
+.total_content .content .content_pic {
+    width: 100%;
+    text-align: center;
+}
+
+.total_content .content .content_pic img {
+    margin: 0;
+}
+
+.total_content .content .content_right {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 435px) {
+    /*對iphone6和iphone6 PLUS相關尺寸*/
+    .toggle {
+        font-size: 3.5em;
+    }
+    /* ---------------首頁--------------- */
+    .link-box {
+        padding: 25px;
+    }
+    .link-box a.boxA {
+        width: 100%;
+        padding: 0;
+        background-image: none;
+        height: auto;
+    }
+    .link-box a.boxA p,
+    .link-box a.boxA img.more {
+        display: none;
+    }
+    .contact .c-infor {
+        width: 90%;
+    }
+    /* -公司訊息- */
+    .copyright {
+        text-align: center;
+    }
+    .copyright-r {
+        display: none;
+    }
+    .rwd-copyright-r {
+        display: block;
+        width: 100%;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+    .rwd-copyright-r p {
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .rwd-copyright-r ul {
+        display: inline-block;
+        margin: 5px 0 5px 10px;
+    }
+    .rwd-copyright-r ul li {
+        float: left;
+        margin-right: 7px;
+    }
+    .photonic {
+        float: none;
+        margin: 0 auto;
+    }
+    .footer-main .tel-banner {
+        /* 左下電話的BANNER */
+        display: none;
+    }
+    .rwd-tel-banner {
+        clear: both;
+        display: block;
+        width: 100%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    /*--------- 內頁共通 ---------*/
+    .inpage-banner01,
+    .inpage-banner02,
+    .inpage-banner03,
+    .inpage-banner04,
+    .inpage-banner05,
+    .inpage-banner06,
+    .inpage-banner07,
+    .inpage-banner08,
+    .inpage-banner09 {
+        display: none;
+    }
+    .submenu {
+        display: none;
+    }
+    .rwd-submenu {
+        display: block;
+        width: 100%;
+        padding-top: 100px;
+    }
+    .rwd-submenu ul {
+        display: none;
+    }
+    .rwd-submenuB {
+        padding-top: 100px;
+    }
+    .rwd-submenuB h2 {
+        height: 80px;
+        line-height: 80px;
+    }
+    .rwd-submenu h2 {
+        display: block;
+        width: 100%;
+        height: 80px;
+        padding-left: 10px;
+        font-size: 1.5em;
+        line-height: 80px;
+        /*text-align:center;*/
+        color: #FFF;
+        font-weight: 700;
+        background-color: #00a2e6;
+    }
+    .inpage-content {
+        width: 100%;
+    }
+    .inpage-textA {
+        float: none;
+        width: 93%;
+        padding: 5px;
+        margin: 0 auto;
+    }
+    .contentA .work .work-contect table.work-table {
+        display: none;
+    }
+    ul.rwd-work-table {
+        display: block;
+        width: 100%;
+    }
+    ul.rwd-work-table li {
+        width: 100%;
+    }
+    /* ------ 表格 ------ */
+    .recruited .r-title h4 {
+        width: 30%;
+    }
+    .recruited .r-title h6 {
+        width: 70%;
+    }
+    .recruited .r-titleB h4 {
+        width: 40%;
+    }
+    .contentA .recruited .form {
+        display: none;
+    }
+    .rwd-form {
+        display: block;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .rwd-form li {
+        margin-bottom: 10px;
+    }
+    .rwd-form li input[type="text"] {
+        width: 98%;
+        height: 28px;
+        margin-bottom: 5px;
+    }
+    .rwd-form li textarea {
+        width: 98%;
+        height: 100px;
+    }
+    .rwd-form li input.text-s {
+        width: 20%;
+        margin: 10px;
+    }
+    .rwd-form li select {
+        width: 35%;
+        height: 33px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+    .rwd-form li select.select-b {
+        width: 35%;
+    }
+    .rwd-form li select.select-s {
+        width: 17%;
+    }
+    .rwd-form li table td.td-title {
+        width: 25%;
+    }
+    .rwd-form li table td.td-contact {
+        width: 70%;
+    }
+    .rwd-form li table select {
+        width: 70%;
+    }
+    .rwd-form li table select.select-s {
+        width: 30%;
+    }
+    .rwd-form li table input.text-s {
+        width: 40%;
+        margin: 2px;
+    }
+    .rwd-form li.btn {
+        width: 100%;
+        text-align: right;
+        display: inline-block;
+    }
+    .rwd-form li.btn .number {
+        width: 100%;
+        height: 60px;
+    }
+    .rwd-form li.btn .number img {
+        vertical-align: middle;
+    }
+    .rwd-form li.btn .number input {
+        color: #999;
+    }
+    .rwd-form li.line {
+        width: 100%;
+        border-top: #CCC 1px solid;
+        margin: 10px auto;
+    }
+    .rwd-form span.mark {
+        color: #F00;
+        font-size: 18px;
+        font-weight: 900;
+        margin-left: -9px;
+    }
+    .rwd-form li.btn {
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 10%;
+    }
+    .rwd-form li.btn input.input-nu {
+        width: 50%;
+        margin-right: 10px;
+    }
+    .rwd-form li.btn a {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+        color: #FFF;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 36px;
+        width: 35%;
+        height: 36px;
+        border-radius: 5px;
+        margin: 0 2px;
+    }
+    .rwd-form li.btn a.outto {
+        background-color: #c72025;
+    }
+    .rwd-form li.btn a.cancel {
+        background-color: #333;
+    }
+    .total_content {
+        padding: 50px 0 20px 0;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    /*對iphone5,GalaxyS5相關尺寸*/
+    /* --首頁-- */
+    .link-box {
+        padding: 20px;
+    }
+    .link-box a.boxA h3 {
+        font-size: 1.2em;
+    }
+    .contact .c-infor p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+    /* -公司訊息- */
+    .rwd-copyright-r {
+        width: 95%;
+        padding-bottom: 20px;
+    }
+    .rwd-copyright-r p {
+        font-size: 13px;
+        line-height: 28px;
+    }
+    .contentA .work h5 {
+        line-height: 35px;
+        padding: 5px;
+    }
+    /* ------ 表格 ------ */
+    .recruited .r-title h4 {
+        width: 35%;
+    }
+    .recruited .r-title h6 {
+        width: 65%;
+    }
+    .recruited .r-titleB h4 {
+        width: 50%;
+    }
+    .rwd-form li input.text-s {
+        width: 20%;
+        margin: 10px 5px;
+    }
+    .rwd-form li.btn input.input-nu {
+        width: 30%;
+        margin-right: 5px;
+    }
+    .rwd-form li select.select-s {
+        width: 15%;
+    }
+}

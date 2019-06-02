@@ -1,0 +1,151 @@
+<!-- wrapper start -->
+</div>
+
+<div class="loading">
+		<img src="__PUBLIC__/images/rolling.svg" />
+		</div>
+</body>
+<script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
+<!--<script src="__PUBLIC__/js/jquery-menu.js"></script>-->
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/js/image_common.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Jquery/JQuery-ui.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/Jquery/JQuery.MenuTree.js"></script>
+
+    <script src="__PUBLIC__/js/Jquery/jquery.form.js"></script>
+<script language="javascript" type="text/javascript">
+function dele(id)
+{
+	if(window.confirm('本操作不可恢復，確定繼續？')){
+		self.location.href=URL+"/doCommand/id/"+id+"/operate/delete";
+	}
+}
+</script>
+<script type="text/javascript">
+
+$(window).load(function(){
+        $('.loading').css('display','none');
+        });
+$('.nav').height($('.iteNav').height()+100);
+$('#{$Think.const.CONTROLLER_NAME}').css("display","block");
+</script>
+
+<script type="text/javascript">
+var animateOC = "{$animateOC}";
+// menu 動畫用
+if(animateOC)
+$('.grayA').each(function(index, element) {
+    $(this).click(function(evt){
+		if( $(this).parent().find('.submenu').is(":visible")==true ){
+			// close self
+			//$(this).parent().find('.submenu').slideUp(500);
+			$('.menuB').slideUp(100);
+			$(this).parent().find('.submenu').hide(500).animate(
+			{heigth:"0"},
+			{duration:0,
+			 complete:function(){
+				 $('.nav').height($('.iteNav').height()+100);
+				 $('.menuB').slideDown(100);
+			 }
+			});
+		}else{
+		    var $hasUp = false; 
+			// close all
+			$('.grayA').each( function(){
+				if( $(this).parent().find('.submenu').is(":visible") && $(this).text()!=self ){
+				  $(this).parent().find('.submenu').slideUp(500);
+				  $hasUp = ($hasUp?$hasUp:true);
+				}
+			} );
+			// open target
+			if( ($(this).parent().find('.submenu').length!=0)||($hasUp) ){ $('.menuB').slideUp(100); }
+			isMenubShow = false;
+			$(this).parent().find('.submenu').show(1000).animate(
+			{heigth:"100%"},
+			{duration:0,
+			 complete:function(){
+				 $('.nav').height($('.iteNav').height()+100);
+				 $('.menuB').slideDown(100);
+			 }
+			});
+			if( ($(this).parent().find('.submenu').length==0)&&($hasUp) ){
+			     window.setTimeout(function(){
+				      $('.nav').height($('.iteNav').height()+100);
+			          $('.menuB').slideDown(100); 
+				 }, 500);
+			}
+		}
+		//
+		//$('.nav').height($('.iteNav').height()+100);
+	});
+});
+
+$(document).ready(function(){
+	// 子項自動開啟
+	var $cid = "{$parent.id}";
+	$('input[name^=id]').each(function(index, element){
+        if( ($(this).val()==$cid)&&($(this).parent().parent().hasClass('submenu')) ){
+			$('.menuB').slideUp(100);
+			$(this).parent().parent().parent().find('.submenu').show(1000).animate(
+			{heigth:"100%"},
+			{duration:0,
+			 complete:function(){
+				 $('.nav').height($('.iteNav').height()+100);
+				 $('.menuB').slideDown(100);
+			 }
+			});
+		}
+    });//end each
+});
+</script>
+
+<script type="text/javascript">
+////////////////////////////////////// check box ///////////////////////////////////////
+// single check box
+$('.checkOpt').click(function(evt){
+	if($(evt.target).hasClass('isChecked')){
+		$(evt.target).removeClass('isChecked');
+	}else{
+		$(evt.target).addClass('isChecked');
+	}
+});
+
+// all box checked
+$('.allChecked').click(function(evt){
+	//alert($(evt.target).is(':checked'));
+	if($(evt.target).is(':checked') == true){
+		$('.checkOpt').each(function(index, element){
+			
+			if(!$(element).hasClass('isChecked')){
+				$(element).addClass('isChecked');
+			}
+		});
+	}else{
+		$('.checkOpt').each(function(index, element){
+			if($(element).hasClass('isChecked')){
+				$(element).removeClass('isChecked');
+			}
+		});
+	}
+});
+
+// menu use
+$('.checkOptMenu').click(function(evt){
+	if($(evt.target).hasClass('isCheckedMenu')){
+		$(evt.target).removeClass('isCheckedMenu');
+	}else{
+		$(evt.target).addClass('isCheckedMenu');
+	}
+});
+
+// all box checked
+$('.allCheckedMenu').click(function(evt){
+	$('.checkOptMenu').each(function(index, element){
+		if(!$(element).hasClass('isCheckedMenu')){
+			$(element).addClass('isCheckedMenu');
+		}
+	});
+});
+
+</script>
+
+</html>

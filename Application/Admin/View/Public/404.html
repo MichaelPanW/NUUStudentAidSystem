@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<head>
+ 
+ <link rel="stylesheet" type="text/css" href="__PUBLIC__/Style/404.css" />
+<script type="text/javascript" src="__PUBLIC__/Js/Jquery/jquery-2.1.4.min.js"> </script>
+<script type="text/javascript" src="__PUBLIC__/Js/Jquery/jquery-ui-1.11.4/jquery-ui.min.js"> </script>
+<script type="text/javascript"> 
+$(document).ready(function(){
+	
+ 	$("#animated_div").click(function()
+ 	{
+ 	$("#animated_div").effect( "puff", {times:1}, 1000,callback(abcfade()) );
+ 	});
+
+    function callback() {
+    setTimeout(function() {
+    $( "#animated_div" ).removeAttr( "style" ).hide().fadeIn();
+      }, 1000 );
+    };
+abcfade();
+function abcfade()
+{
+$("#abc").fadeOut(2500);
+$("#abc").fadeIn();
+}
+});
+</script>
+<title>404 </title>
+
+</head>
+
+<body class="html">
+
+<div id="animated_div">
+<p id="abc"> 404 </br>not found</p>
+</div>
+
+
+
+
+</body>
+
+</html>

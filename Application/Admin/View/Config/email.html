@@ -1,0 +1,32 @@
+{// 加载头部公共文件 }
+<include file="Public:header" />
+<!-- 菜单区域  -->
+
+<!-- 主页面开始 -->
+<div id="main" class="main" >
+<!-- 主体内容  -->
+<div class="content" >
+<div class="title">編輯Email [ <a href="__URL__">返 回</a> ]</div>
+<!--  功能组区域  -->
+<div id="result" class="result none"></div>
+<form method=post id="form1">
+<table class="select" style="width:400px"><tr><td height="5" colspan="3" class="topTd" ></td></tr><tr><th class="tCenter">接收客戶忘記密碼之mail：<input type="text" class="medium bLeft" name="email" value="{$vo.email}">
+</th></tr>
+<tr>
+<td  class="row tCenter" >
+<input type="button" onclick="sendForm('form1','__URL__/_modify/','tips')" value="保 存" class="submit ">&nbsp;
+<input type="hidden" name="id" VALUE="{$vo.id}" >
+<input type="hidden" name="ajax" VALUE="1">
+</td>
+</tr>
+<tr>
+<td height="5" class="bottomTd" >
+</td>
+</tr>
+</table>
+</form>
+</div>
+<!-- 主体内容结束 -->
+</div>
+<!-- 主页面结束 -->
+

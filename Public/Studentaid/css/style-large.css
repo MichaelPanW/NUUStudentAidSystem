@@ -1,0 +1,29 @@
+@media screen and (max-width: 1280px) {
+
+#tabs{
+	width: 40%;
+}
+
+#classification{
+	font-size: 15pt;
+}
+#canclass{
+	padding: 0;
+}
+#myclass{
+	padding: 0;
+}
+.normal_box{
+    font-size: 15px;
+}
+
+.pagetitle{
+    font-size:30px;
+}
+.createpic{
+    font-size:25px;
+
+    padding: 10px 15px;
+}
+}
+

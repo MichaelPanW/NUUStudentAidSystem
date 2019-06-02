@@ -1,0 +1,96 @@
+<!-- Menu start -->
+<div id="Menu">
+	<ul>
+	<!--
+		<li>
+			<if condition="$Think.session.roleId eq 1">
+				<div class="iteMenu">
+					<a href="__APP__/Indexpic/index"><img src='__PUBLIC__/images/menu_icon/home.png' />首頁管理</a>
+					
+					<div class="iteNav" id="Indexpic">         
+						<ul>
+							<li><a class="grayA" href="{:U('Indexpic/index','id=250')}" >大圖輪播</a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+			</if>
+		</li>-->
+		<li>
+			<div class="iteMenu" >
+				<a href="__APP__/About/title"><img src='__PUBLIC__/images/menu_icon/about.png' />關於系統</a>
+				<div class="iteNav" id="About">
+					<ul><li><a class="grayA" href="{:U('About/title')}">首頁介紹</a></li>
+					</ul>
+					<!--
+					<ul><li><a class="grayA" href="{:U('About/boss')}">計畫負責人</a></li>
+					</ul>
+					
+					<ul><li><a class="grayA" href="{:U('About/content')}">計畫內容</a></li>
+					</ul>
+					-->
+				</div>
+			</div>
+		</li>
+		<li>
+		<li>
+			
+			<div class="iteMenu">
+				<a href="__APP__/Relate/index"><img src='__PUBLIC__/images/menu_icon/shaking.png' />資料管理</a>    <div class="iteNav" id="Relate">
+					<ul>
+					<li><a class="grayA" href="{:U('Relate/index')}">資料更新</a></li>
+					<li><a class="grayA" href="{:U('Relate/teach')}">更新教學</a></li>
+					<li><a class="grayA" href="{:U('Relate/myclass')}">班級資料</a></li>
+					<li><a class="grayA" href="{:U('Relate/user')}">使用者資料</a></li>
+					<li><a class="grayA" href="{:U('Relate/oldindex')}">資料更新(舊)</a></li>
+					<li><a class="grayA" href="{:U('Relate/oldteach')}">更新教學(舊)</a></li>
+
+					</ul>
+					
+				</div>
+				
+			</div>
+			
+		</li>
+		<li>
+				<div class="iteMenu isSys">
+					<a href="__APP__/Config/index"><img src='__PUBLIC__/images/menu_icon/about.png' />系統管理</a>
+					<div class="iteNav" id="Config">
+						<ul><li><a class="grayA" href="{:U('Config/index')}">名稱管理</a></li>
+						
+						</ul>
+						
+					</div>
+				</div>
+		</li>
+		
+		<li>
+			<if condition="$Think.session.roleId eq 1">
+				<div class="iteMenu isSys">
+					<a href="__APP__/Admin/index"><img src='__PUBLIC__/images/menu_icon/account.png' />帳號管理</a>
+					<div class="iteNav" id="Admin">
+
+						
+						<ul><li><a class="grayA" href="{:U('Admin/index')}">管理帳號</a></li>
+						</ul>
+						
+						
+					</div>
+				</div>
+			</if>
+		</li>
+		
+		<li>
+			<div class="iteMenu isSys">
+				<a href="__ROOT__/" target="_blank"><img src='__PUBLIC__/images/menu_icon/monitor.png' />查看前台</a>
+			</div>
+		</li>
+		
+	</ul>
+	
+	
+</div>
+<!-- Menu end -->
+<!---------main_menu end------------->

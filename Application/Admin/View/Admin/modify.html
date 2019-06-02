@@ -1,0 +1,150 @@
+<include file="Public:header" />
+
+<include file="Public:sider_left" />
+
+<script language="javascript" type="text/javascript">
+	function checkAll(form, name, status) 
+	{
+		for(var i = 0; i < form.elements.length; i++){
+			var e = form.elements[i];
+			if(e.name.match(name)){
+				e.checked = status;
+			}
+		}
+	}
+	
+	function check_form() 
+	{
+		var email=$("#email").val();
+		var emailPat = /^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/;
+		
+		if(email.match(emailPat) === null){
+			alert('電子信箱格式資料錯誤');
+			return false;
+		}
+		return true;
+	}
+</script>
+<!--<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/Js/kindeditor/lang/zh_TW.js"></script>
+	<script>
+	var editor;
+	KindEditor.ready(function(K) {
+	editor = K.create('#descriptions', {
+	afterBlur: function(){this.sync();},
+	langType : 'zh_TW',
+	items:[
+	'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'cut', 'copy', 'paste',
+	'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+	'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+	'superscript', 'quickformat', 'selectall', '|', 'fullscreen', '/', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+	'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage',
+	'flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'pagebreak',
+	'anchor', 'link', 'unlink', '|', 'about'],
+	width:'100%',
+	height:'350px',
+	resizeType:0
+	});
+	});
+</script>-->
+
+
+<!-----主內容------>
+<div class="container">
+	<div class="tabTitle">帳號列表 > <span class="conTitle">編輯{$vos.username}</span></div>                           
+    <div class="Main">
+		<!-- 按鈕 start -->
+		<div class="buttonA">
+			<li class="btnB"><a name="add" onclick="javascript:document.location='__URL__/insert/id/{$parent.id}';" >新增</a></li>
+			
+			<div class="selectLable">
+			</div>
+		</div>
+		<!-- 按鈕 end -->
+		
+		<form method="post" action="{:U('Admin/doModify')}" enctype="multipart/form-data" id="mainFrom">
+			<div class="tabB">
+				<table border="0" cellpadding="0" cellspacing="0" >
+					<tr>
+						<td align="right"><font color="#FF0000"> * </font>用戶名</td>
+						<td>{$vos.username}</td>
+					</tr>
+					<tr><td colspan="2"><hr /></td></tr>
+					<tr>
+						<td align="right"><font color="#FF0000"> * </font>姓名</td>
+						<td>
+							<input name="realname" type="text" id="realname" size="90" value="{$vos.realname}" />
+						</td>
+					</tr>
+					<tr><td colspan="2"><hr /></td></tr>
+					<tr>
+						<td align="right"><font color="#FF0000"> * </font>密碼</td>
+						<td>
+							<input name="password" type="password" id="password" size="90" />
+							<input name="opassword" type="hidden" id="opassword" value="{$vos.password}" />
+						</td>
+					</tr>
+					<!--<tr><td colspan="2"><hr /></td></tr>
+					<tr>
+						<td align="right"><font color="#FF0000"> * </font>電子信箱</td>
+						<td>
+							<input name="email" type="text" id="email" size="90" value="{$vos.email}" />
+						</td>
+					</tr>
+					<tr><td colspan="2"><hr /></td></tr>
+					<tr>
+						<td align="right"><font color="#FF0000"> * </font>類型</td>
+						<td>
+							
+							<select name="role_id" id="select">
+								
+								<volist name="roleList" id="vo" key="k" > 
+									<if condition="$vo[id] eq $vos[role_id]">
+										<option value="{$vo.id}" selected >{$vo.role_name}</option>
+										<else />
+										
+										<option value="{$vo.id}"  >{$vo.role_name}</option>
+									</if>
+								</volist>
+							</select>
+						</td>
+					</tr>
+					<tr><td colspan="2"><hr /></td></tr>-->
+					<tr>
+						<td align="right"><font color="#FF0000">* </font>狀態</td>
+						<td> 
+							<label class="noclass">
+							<input type="radio" name="status" value="1" id="status1" <eq name="vos.status" value="1">checked</eq> />開啟
+						</label>
+						<label class="noclass">
+							<input type="radio" name="status" value="0" id="status0" <eq name="vos.status" value="0">checked</eq> />暫停
+						</label>
+					</td>
+			</tr>
+			<tr><td colspan="2"><hr /></td></tr>
+			<tr>
+				<td colspan="2">
+					<font color="#FF0000"> *類型為＂總管理＂者，有權限使用＂管理者＂選項； <br/>類型為＂管理者＂，無權限使用＂管理者＂選項<br/>*電子信箱請確實填寫,以便忘記密碼時使用</font>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="buttonA">
+		<input type="hidden" name="id" id="id" value="{$vos.id}" />
+		<!--<input type="hidden" name="main_image_old" VALUE="{$vos.main_image}">
+		<input type="hidden" name="main_thumb_old" VALUE="{$vos.main_thumb}">-->
+		<ul>
+			<li class="btnA"><a onclick="javascript:document.getElementById('mainFrom').submit();">送出</a></li>
+		</ul>
+</div>
+</form>
+
+</div>
+</div>
+<!-----主內容 end------>
+
+<include file="Public:footer" />
+
+</body>
+</html>
