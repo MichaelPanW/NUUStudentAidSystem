@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<title>{$con['contactname']}</title>
 	<meta property="og:title" content="聯合大學選課輔助系統" />
-
+	<meta property="og:type"  content="article" />
 	<meta property="og:description" content="最方便的選課輔助系統歐~~~" />
-
-	<meta property="og:url" content="http://studentaid.nuucloud.com/" />
-	<meta property="og:image"              content="__PUBLIC__images/studentaid.png" />
+	<meta property="og:url" content="https://studentaid.nuucloud.com/" />
+	<meta property="og:image" content="https://studentaid.nuucloud.com/Public/Studentaid/images/studentaid.png" />
+	<meta property="fb:app_id" content="431779660362216"/>
 	<link rel="shortcut icon" type="image/x-icon" href="__PUBLIC__images/title_icon.ico" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 
@@ -34,7 +34,7 @@
 		<div class="top_index"><a>
 				{$con['contactname']}
 			</a><br>
-			<div class="fb-like" data-href="http://studentaid.nuucloud.com/" data-layout="standard" data-action="recommend" data-show-faces="true"
+			<div class="fb-like" data-href="https://studentaid.nuucloud.com/" data-layout="standard" data-action="recommend" data-show-faces="true"
 			    data-share="true" style="color:#fff"></div>
 		</div>
 		<div id="tabs">
@@ -88,6 +88,9 @@
 
 	<include file="Public:footer" />
 	<script>
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+	<script>
 		$("#tabs").tabs();
 		var myhtml = $.ajax({
 			type: "POST", //傳值方式有分 post & get 
@@ -112,5 +115,5 @@
 
 
 		});
-		show_fb_talks('fb', $(window).width(), 10, 'http://studentaid.nuucloud.com/');
+		show_fb_talks('fb', $(window).width(), 10, 'https://studentaid.nuucloud.com/');
 	</script>

@@ -43,17 +43,15 @@
     });
   }
 	//登入設定
+
   window.fbAsyncInit = function() {
-	  FB.init({
-		appId      : '431779660362216',//使用者id
-		cookie     : true,  //是否寫入cookie
-		xfbml      : true,  
-		version    : 'v2.5' 
-	  });
-	  FB.getLoginStatus(function(response) {
-		statusChangeCallback(response);
-	  });
-	};
+    FB.init({
+      appId            : '431779660362216',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.3'
+    });
+  };
  
   // 登入設定檔
   (function(d, s, id) {
